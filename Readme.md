@@ -5,44 +5,36 @@ Octave scripts to calculate parameters on  contact mechanics.
 # Repo structure
 ```
 contact_mechanics
-│   README.md
-│   .gitignore    
-│
+│───README.md
+│───.gitignore    
 └─── contact_mechanics/
-    │   main.m
-    │   contact_mechanics.m
-    │   input_data.xlsx
-    |
-    └─── Hertz/
-       │   hertz_detect_type.m
-       │   hertz_elliptical_constants.m
-       │   hertz_theory_elliptical.m
-       |   hertz_theory_linear.m
-       |
-    └─── Lubricant/
-       │   lub_astm_D341.m
-       │   lub_piezoviscosity_Gold.m
-       |
-    └─── Read_input/
-       │   extract_values_from_structure.m
-       │   read_input_excel.m
-       │   substitute_values_on_structure.m
-       |   hertz_theory_linear.m
-       |
-    └─── Roughness/
-       │   rough_parametrize.m
-       │   rough_read_txt.m
-       |
-    └─── Thermal/
-       │   thermal_of_contact.m
-       |
-    └─── Thickness/
-       │   thickness_EHL_elliptical.m
-       │   thickness_EHL_linear.m
-       │   thickness_thermal_correction.m
-       |
+    │─── main.m
+    │─── contact_mechanics.m
+    │─── input_data.xlsx
+    │─── Hertz/
+    |   │─── hertz_detect_type.m
+    |   │─── hertz_elliptical_constants.m
+    |   │─── hertz_theory_elliptical.m
+    |   └─── hertz_theory_linear.m
+    │─── Lubricant/
+    |   │─── lub_astm_D341.m
+    |   └─── lub_piezoviscosity_Gold.m
+    │─── Read_input/
+    |   │─── extract_values_from_structure.m
+    |   │─── read_input_excel.m
+    |   │─── substitute_values_on_structure.m
+    |   └─── hertz_theory_linear.m
+    │─── Roughness/
+    |   │─── rough_parametrize.m
+    |   └─── rough_read_txt.m
+    │─── Thermal/
+    |   └─── thermal_of_contact.m
+    │─── Thickness/
+    |   │─── thickness_EHL_elliptical.m
+    |   │─── thickness_EHL_linear.m
+    |   └─── thickness_thermal_correction.m
     └─── Txt data example/
-       │   polished.txt
+        └─── polished.txt
 ```
 
 ## Workflow
