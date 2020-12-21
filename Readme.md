@@ -2,7 +2,6 @@
 
 Scrips to calculate parameters on  Contact Mechanics.
 
-
 # File structure
 ```
 contact_mechanics
@@ -43,7 +42,12 @@ contact_mechanics
        │   thickness_thermal_correction.m
 ```
 
-## Create files and folders
+## Workflow
+
+### main.m
+[![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBW21haW4ubV0gLS0-IEIocmVhZF9pbnB1dF9leGNlbC5tKVxuICAgIEIgLS0-IEN7SGFzIC50eHQgZGF0YT99XG4gICAgQyAtLT58WWVzfCBEW3JvdWdoX3JlYWRfdHh0Lm1dXG4gICAgRCAtLT4gRXtJcyBtdWx0aXBsZSBmaWxlP31cbiAgICBDIC0tPnxOb3xFXG4gICAgRSAtLT58WWVzfCBGW3N1YnN0aXR1dGVfdmFsdWVzX29uX3N0cnVjdHVyZS5tXVxuICAgIEYgLS0-IEdbW2NvbnRhY3RfbWVjaGFuaWNzLm1dXVxuICAgIEUgLS0-fE5vfEhbW2NvbnRhY3RfbWVjaGFuaWNzLm1dXVxuICAgIEcgLS0-IElbZXh0cmFjdF92YWx1ZXNfZnJvbV9zdHJ1Y3R1cmUubV1cbiAgICBJIC0tPiBKW3Bsb3QgcmVzdWx0c11cbiAgICAgICAgICAgICIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9)](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBW21haW4ubV0gLS0-IEIocmVhZF9pbnB1dF9leGNlbC5tKVxuICAgIEIgLS0-IEN7SGFzIC50eHQgZGF0YT99XG4gICAgQyAtLT58WWVzfCBEW3JvdWdoX3JlYWRfdHh0Lm1dXG4gICAgRCAtLT4gRXtJcyBtdWx0aXBsZSBmaWxlP31cbiAgICBDIC0tPnxOb3xFXG4gICAgRSAtLT58WWVzfCBGW3N1YnN0aXR1dGVfdmFsdWVzX29uX3N0cnVjdHVyZS5tXVxuICAgIEYgLS0-IEdbW2NvbnRhY3RfbWVjaGFuaWNzLm1dXVxuICAgIEUgLS0-fE5vfEhbW2NvbnRhY3RfbWVjaGFuaWNzLm1dXVxuICAgIEcgLS0-IElbZXh0cmFjdF92YWx1ZXNfZnJvbV9zdHJ1Y3R1cmUubV1cbiAgICBJIC0tPiBKW3Bsb3QgcmVzdWx0c11cbiAgICAgICAgICAgICIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9)
+
+### contact_mechanics.m
 
 The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the **New file** button in the file explorer. You can also create folders by clicking the **New folder** button.
 
