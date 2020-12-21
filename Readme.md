@@ -60,15 +60,14 @@ contact_mechanics
    - io
    - signal
 
-### Data Entry
-- Fill `input_data.xlsx` with desired values (list of entry variables here)
+1. Fill `input_data.xlsx` with desired values (list of entry variables here)
 
 At `input_data.xlsx`
 Ligth blue fields are those to user input values
 A message is displayed when user selects a light-blue cell
 Fill boolean fields with an 'x'
 
-### Some fields are ambiguous:
+### Some data fields are intentionally ambiguous:
 #### Environment
 - `Fn` or `Po`: if user input `Fn`, calculation will be performed with `Fn`; otherwise will check `Po` value
 #### Lubricant properties
@@ -77,7 +76,8 @@ Fill boolean fields with an 'x'
 #### Surface
 - .txt data gathered (CCI measurement): use if inputed 'x'; otherwise check for `amplitude and lambda`
 - `amplitude and lambda`: use if inputed and .txt not marked; otherwise calculate with `Sq`
-- Run `main.m` in Octave environment
-- Calculated parameters allocated on variable named `results` (list of results variables here)
+
+2. Run `main.m` in Octave environment
+3. Calculated parameters allocated on variable named `results` (list of results variables here)
 
 
