@@ -65,13 +65,13 @@ rough.x = linspace(-hertz.a*1.2,hertz.a*1.2,701);
     hold on
     plot (rough.x/hertz.a,1000*(rough.sup2-max(rough.sup2)),'k','DisplayName',text2);
     xlabel('x/a', 'Fontsize',16)
-    ylabel('Superfícies (mm)', 'Fontsize',16)
+    ylabel('Surfaces (mm)', 'Fontsize',16)
     set(gca, "linewidth", 4, "fontsize", 16)
     h = legend();
     set(h, 'fontsize', 16)
     end
 
-## ATRITO
+## FRICTION
 friction.kelley=0.0127*log10((0.02966*hertz.Fn) / (lubricant.eta*hertz.L*cin.Vesc*cin.Vrol^2));
 friction.eng_iso=0.0254*((hertz.Fn*rough.rqcomb) / (lubricant.eta * hertz.L * hertz.Rx * cin.Vrol))^0.25;
 friction.eng_michaelis=0.0778 * (hertz.Fn/(hertz.L*hertz.Rx*cin.Vrol))^0.2 * (1/lubricant.eta)^0.05 * (rough.rqcomb/sqrt(2))^0.25;
