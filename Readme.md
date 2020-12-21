@@ -55,8 +55,11 @@ contact_mechanics
 ### 1. Fill `input_data.xlsx` with desired values (list of entry variables here) ###
 
 At `input_data.xlsx`
+
 Ligth blue fields are those to user input values
+
 A message is displayed when user selects a light-blue cell
+
 Fill boolean fields with an 'x'
 
 #### Some data fields are intentionally ambiguous:
