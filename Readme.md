@@ -33,8 +33,12 @@ contact_mechanics
     |   │─── thickness_EHL_elliptical.m
     |   │─── thickness_EHL_linear.m
     |   └─── thickness_thermal_correction.m
-    └─── Txt data example/
-        └─── polished.txt
+    │─── Txt data example/
+    │   └─── polished.txt
+    │─── Video tutorial/
+        │─── example_multiple_cases.mkv
+        └─── example_unique_case.mkv
+    
 ```
 
 ## Workflow
