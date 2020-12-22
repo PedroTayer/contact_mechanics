@@ -10,12 +10,6 @@ addpath('./Read_input')
 # Development: Pedro Del Negro Tayer
 
 
-# trabalho biazon
-# ajustar tensões
-# atualizar lista de variáveis
-# vídeo explicativo
-
-
 ################ INITIALIZATION ######################
 # Read input data and allocate on variables
 [data,data_txt,raw]=read_input_excel();
@@ -34,7 +28,8 @@ end
 
 # If there is no parameter variation, run for unique case
 if ~data.multiple
-  results=contact_mechanics(data, 0);
+  [data, hertz, lubricant, cin, thickness, friction, thermal, rough]=contact_mechanics(data, 0);
+  results=cell2struct({data, hertz, lubricant, cin, thickness, friction, thermal, rough}',{'data','hertz','lubricant','cin','thickness','friction','thermal','rough'});
 else
   # Definição 
   pct=0;

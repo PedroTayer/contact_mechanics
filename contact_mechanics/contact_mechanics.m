@@ -11,12 +11,12 @@ addpath('./Thermal');
 type=hertz_detect_type(data.Rx1,data.Rx2,data.Ry1,data.Ry2);   % 0 linear % 1 elliptical
 
 ## HERTZ
-if type==0 % Contato é linear
+if type==0 % Contact is linear
   if toshow
 printf('\nContact is linear\n')
 end
 hertz=hertz_theory_linear(data.poisson1, data.E1, data.poisson2, data.E2, data.Rx1, data.Rx2, data.Fn, data.L, data.Po);
-else % Contato é elliptical
+else % Contact is elliptical
 if toshow
 printf('\nContact is elliptical\n')
 end
@@ -29,8 +29,8 @@ cin.W2 = 2*pi*data.n2/60; % Conversion rpm->rad/s
 cin.U1 = data.V1 + cin.W1*data.Rx1; % Tangential velocity of contact point = V+W*r
 cin.U2 = data.V2 + cin.W2*data.Rx2; % Tangential velocity of contact point = V+W*r
 cin.Vrol = cin.U1+cin.U2; % Apostila 3 pg 43
-cin.Vesc = abs(cin.U1-cin.U2); % Apostila 3 pg 43
-cin.Ve = cin.Vesc/cin.Vrol; % Apostila 3 pg 43
+cin.Vslid = abs(cin.U1-cin.U2); % Apostila 3 pg 43
+cin.Ve = cin.Vslid/cin.Vrol; % Apostila 3 pg 43
 
 ## LUBRICANT
 if (data.k>0 && data.eta>0 && data.beta>0 && data.visc_cin>0)
@@ -72,7 +72,7 @@ rough.x = linspace(-hertz.a*1.2,hertz.a*1.2,701);
     end
 
 ## FRICTION
-friction.kelley=0.0127*log10((0.02966*hertz.Fn) / (lubricant.eta*hertz.L*cin.Vesc*cin.Vrol^2));
+friction.kelley=0.0127*log10((0.02966*hertz.Fn) / (lubricant.eta*hertz.L*cin.Vslid*cin.Vrol^2));
 friction.eng_iso=0.0254*((hertz.Fn*rough.rqcomb) / (lubricant.eta * hertz.L * hertz.Rx * cin.Vrol))^0.25;
 friction.eng_michaelis=0.0778 * (hertz.Fn/(hertz.L*hertz.Rx*cin.Vrol))^0.2 * (1/lubricant.eta)^0.05 * (rough.rqcomb/sqrt(2))^0.25;
 friction.coef=friction.kelley;
@@ -80,7 +80,7 @@ friction.coef=friction.kelley;
 ## LUBRICANT FILM THICNESS
 if type==0 # Linear
 thickness = thickness_EHL_linear(hertz.Fn, hertz.L, hertz.Rx, hertz.Ecomb, lubricant.eta, lubricant.alfa, cin.Vrol);
-else # Pontual
+else # Elliptical
 thickness = thickness_EHL_elliptical(hertz.Fn, hertz.Rx, hertz.Ry, hertz.Ecomb, lubricant.eta, lubricant.alfa, cin.Vrol);
 end
 
@@ -93,13 +93,13 @@ thickness.h0 = thickness.h0_without_correction*thickness.fi_t;
 thickness.hm = thickness.hm_without_correction*thickness.fi_t; 
 # Temperatura in center
 thickness.deltaT=(1-thickness.fi_t^(1/0.727))/lubricant.beta; % Apostila 3 página 51
-thickness.Tcentdf=data.Tf-273+thickness.deltaT; % Apostila 3 página 51
+thickness.Tcenter=data.Tf-273+thickness.deltaT; % Apostila 3 página 51
 
 
 lambda_corr=thickness.lambda_corr;
 
 ## THERMAL PARAMETERS
-thermal=thermal_of_contact(data.C1,data.C2,data.K1,data.K2,data.ro1,data.ro2,friction.coef,cin.Vesc,cin.U1,cin.U2,hertz.Fn,hertz.L,hertz.Ecomb,hertz.Rx,lubricant.alfa,lubricant.eta,thickness.h0_corr,lubricant.k,data.Tf, hertz.pm, lubricant.beta);
+thermal=thermal_of_contact(data.C1,data.C2,data.K1,data.K2,data.ro1,data.ro2,friction.coef,cin.Vslid,cin.U1,cin.U2,hertz.Fn,hertz.L,hertz.Ecomb,hertz.Rx,lubricant.alfa,lubricant.eta,thickness.h0_corr,lubricant.k,data.Tf, hertz.pm, lubricant.beta);
 
 rmpath('./Hertz');
 rmpath('./Thickness');
