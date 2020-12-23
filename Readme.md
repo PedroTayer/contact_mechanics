@@ -115,7 +115,7 @@ Input variables (prefix results.data)| Description
 | **T1**|  Temperature 1 for viscosity (ASTMD341) (K)|
 | **eta1**|  Dynamic viscosity for T1 (mm2/s)|
 | **SpecGrav**|  Lubricant Specific Gravity (1)|
-| **a_lub **|  Factor a for lubricant (ASTM D341)|
+| **a_lub**|  Factor a for lubricant (ASTM D341)|
 | **s**|  Factor s for Gold's piezoviscosity coefficient|
 | **t**|  Factor t for Gold's piezoviscosity coefficient|
 | **amp1***|  Roughness amplitude of body 1 (m)|
@@ -133,8 +133,8 @@ results.hertz| Description
 |**Ry**|  Combined radius on y direction (m)|
 |**A**|  Bigger curvature radius (1/m)|
 |**B**|  Smaller curvature radius (1/m)|
-|**L**| Contact Length (m)|
-|**invertido**| If A if on y direction, 'invertido' is true|
+|**L**| Contact length (m)|
+|**invertido**| If A is on y direction, 'invertido' is true|
 |**k**| Ellipticity factor (1)|
 |**elips**| Ellipticity factor tau0 calculus (1)|
 |**Ca**| Coefficient para a (1)|
@@ -179,7 +179,7 @@ results.cin| Description
 |**U1**|  Tangential velocity at contact of body 1 (m/s)|
 |**U2**|  Tangential velocity at contact of body 2 (m/s)|
 |**Vrol**|  Rolling velocity (U1+U2) (m/s)|
-|**Vslid**|  Sliding velocity (|U1-U2|) (m/s)|
+|**Vslid**|  Sliding velocity (abs(U1-U2)) (m/s)|
 |**Ve**|  Entrainment velocity (Vslid/Vrol) (1)|
 
 ### Film thickness
@@ -203,10 +203,11 @@ results.thickness| Description
 
 ### Friction
 results.friction| Description
+--------: | ---
 |**kelley**| Kelley friction |
 |**eng_iso**| ISO friction for gears|
 |**eng_michaelis**| Michaelis friction for gears|
-|**coef**| Selected friction coefficient
+|**coef**| Selected friction coefficient|
 
 ### Thermal
 results.thermal| Description
@@ -215,7 +216,7 @@ results.thermal| Description
 |**param_therm2**| Thermal parameter of solid 2 (N/mKs^0.5) |
 |**Tflash**| Flash temperature (raise in surface temperature) (°C)|
 |**deltacrook**| Raise in Crook lubricant temperature (°C)|
-|**Tcrook**| Crook Temperature (°C) (T0 + TFlash + deltacrook)|
+|**Tcrook**| Crook Temperature (T0 + TFlash + deltacrook) (°C)|
 |**exp_roelands_temperature**| Roelands viscosity exponent due to temperature (not used)|
 |**exp_roelands_pressure**| Roelands viscosity exponent due to pressure|
 |**eta_roelands**| Roelands viscosity at pressure p (Pa*s)|
