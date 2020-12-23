@@ -77,7 +77,7 @@ friction.eng_iso=0.0254*((hertz.Fn*rough.rqcomb) / (lubricant.eta * hertz.L * he
 friction.eng_michaelis=0.0778 * (hertz.Fn/(hertz.L*hertz.Rx*cin.Vrol))^0.2 * (1/lubricant.eta)^0.05 * (rough.rqcomb/sqrt(2))^0.25;
 friction.coef=friction.kelley;
 
-## LUBRICANT FILM THICNESS
+## LUBRICANT FILM THICKNESS
 if type==0 # Linear
 thickness = thickness_EHL_linear(hertz.Fn, hertz.L, hertz.Rx, hertz.Ecomb, lubricant.eta, lubricant.alfa, cin.Vrol);
 else # Elliptical
@@ -87,10 +87,7 @@ end
 # Lambda
 thickness.lambda_without_correction = thickness.h0_without_correction/rough.rqcomb; % Apostila 3 página 51
 # Thermal correction
-[thickness.fi_t, thickness.L_term, thickness.lambda_corr, thickness.h0_corr, thickness.hm_corr] = thickness_thermal_correction(lubricant.beta, lubricant.eta, lubricant.k, cin.Vrol, cin.Ve, thickness.lambda_without_correction, thickness.h0_without_correction, thickness.hm_without_correction);
-thickness.lambda = thickness.lambda_without_correction*thickness.fi_t; 
-thickness.h0 = thickness.h0_without_correction*thickness.fi_t; 
-thickness.hm = thickness.hm_without_correction*thickness.fi_t; 
+[thickness.fi_t, thickness.L_term, thickness.lambda, thickness.h0, thickness.hm] = thickness_thermal_correction(lubricant.beta, lubricant.eta, lubricant.k, cin.Vrol, cin.Ve, thickness.lambda_without_correction, thickness.h0_without_correction, thickness.hm_without_correction);
 # Temperatura in center
 thickness.deltaT=(1-thickness.fi_t^(1/0.727))/lubricant.beta; % Apostila 3 página 51
 thickness.Tcenter=data.Tf-273+thickness.deltaT; % Apostila 3 página 51
