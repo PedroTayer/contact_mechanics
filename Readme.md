@@ -56,7 +56,7 @@ contact_mechanics
    - io
    - signal
 
-### 1. Fill blue fields in `input_data.xlsx` with desired values [list of input variables](Input_variables.md)) ###
+### 1. Fill blue fields in `input_data.xlsx` with desired values ([list of input variables](Input_variables.md)) ###
 
 > Boolean fields must be filled with an 'x'
 
