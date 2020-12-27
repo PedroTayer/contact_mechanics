@@ -56,15 +56,9 @@ contact_mechanics
    - io
    - signal
 
-### 1. Fill `input_data.xlsx` with desired values (list of input variables further) ###
+### 1. Fill blue fields in `input_data.xlsx` with desired values [list of input variables](Input_variables.md)) ###
 
-At `input_data.xlsx`
-
-Ligth blue fields are those to user input values
-
-A message is displayed when user selects a light-blue cell
-
-Fill boolean fields with an 'x'
+> Boolean fields must be filled with an 'x'
 
 #### Some data fields are intentionally ambiguous:
 ##### Environment
@@ -77,7 +71,7 @@ Fill boolean fields with an 'x'
 - `amplitude and lambda`: use if inputed and .txt not marked; otherwise calculate with `Sq`
 
 ### 2. Run `main.m` in Octave environment ###
-### 3. Calculated parameters allocated on variable named `results` (list of results variables further) ###
+### 3. Calculated parameters allocated on variable named `results` ([list of results variables](Results_variables.md)) ###
 
 ## Input Variables
 Check [list of input variables](Input_variables.md)
