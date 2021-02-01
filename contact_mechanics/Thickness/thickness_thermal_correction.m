@@ -4,4 +4,4 @@ function [fi_t,L, lambda_corr, h0_corr, hm_corr] =thickness_thermal_correction(b
   lambda_corr = lambda* fi_t; 
   h0_corr = h0* fi_t; 
   hm_corr = hm* fi_t; 
-endfunction
+end

@@ -23,4 +23,4 @@ function term=thermal_of_contact(C1,C2,k1,k2,ro1,ro2,coef_atrito,Vesc,U1,U2,Fn,l
   term.Tmax_sup = T0 - 273 + term.Tflash; % (°C)
   term.Tmax_lub = term.Tmax_sup + term.deltaroelands; % (°C)
   %term.tspecific = term.tmax/tlim
-endfunction
+end

@@ -43,4 +43,4 @@ function [Tz,Sq,Sa]=rough_read_txt(body, toplot)
     set(gca, "linewidth", 4, "fontsize", 16)
     set(h, 'FontSize', 16)
   end
-endfunction
+end

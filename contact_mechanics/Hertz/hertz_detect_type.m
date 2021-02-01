@@ -8,12 +8,12 @@ function type=hertz_detect_type(Rx1, Rx2, Ry1, Ry2)
   if qt_infs==3
     type=0;
     return
-  endif
+  end
   if qt_infs==2
     if (Rx1==Inf && Rx2==Inf) || (Ry1==Inf && Ry2==Inf)
       type = 0;
       return
-    endif
-  endif
+    end
+  end
   type = 1;
-endfunction
+end

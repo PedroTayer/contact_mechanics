@@ -66,7 +66,7 @@ end
 %% ROUGHNESS
 [rough.sup1, rough.sq1, rough.sa1, rough.Tz1, text1]=rough_parametrize(1, data.Rx1, data.sq1, data.amp1, data.wavelength1, data.Tz1, hertz.a);
 [rough.sup2, rough.sq2, rough.sa2, rough.Tz2, text2]=rough_parametrize(2, data.Rx2, data.sq2, data.amp2, data.wavelength2, data.Tz2, hertz.a);
-rough.rqcomb=sqrt(rough.sq1**2+rough.sq2**2);
+rough.rqcomb=sqrt(rough.sq1^2+rough.sq2^2);
 rough.x = linspace(-hertz.a*1.2,hertz.a*1.2,701);
     if data.plot_surfaces
     figure

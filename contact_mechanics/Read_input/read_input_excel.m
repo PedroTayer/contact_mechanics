@@ -7,8 +7,8 @@ function [data, data_txt,raw]=read_input_excel()
   for i=1:length(cols_infs);
     if (strcmpi(cols_infs{i,1},'inf'));
       raw(i-1,1)=Inf;
-    endif
-  endfor
+    end
+  end
   
  
   % Table of values

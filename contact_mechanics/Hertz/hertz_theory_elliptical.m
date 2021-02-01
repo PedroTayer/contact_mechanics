@@ -18,17 +18,17 @@ function hertz=hertz_theory_elliptical(v1, E1, v2, E2, Rx1, Rx2, Ry1, Ry2, Fn, P
     hertz.inverted = true;
     hertz.A=1/hertz.Ry;  % Apostila 3 pg 61
     hertz.B=1/hertz.Rx;  % Apostila 3 pg 61
-  endif
+  end
   
   % Elliptical constants
   [hertz.k, hertz.Ca, hertz.Cdelta, hertz.Csigma, hertz.Ctau, hertz.CZs, hertz.Ctau0, hertz.CZ0, hertz.elips] = hertz_elliptical_constants(hertz.A/hertz.B, hertz.inverted, toplot);
   
   % Combined elastic modulus
-  hertz.Ecomb = 1 / (((1 - v1**2) / E1) + ((1 - v2**2) / E2)); % Apostila 3 pg 57
+  hertz.Ecomb = 1 / (((1 - v1^2) / E1) + ((1 - v2^2) / E2)); % Apostila 3 pg 57
   
   % If entry is from Po
   if Fn==0
-    hertz.Fn = (hertz.Ca**2 * Po * 2 * pi/(3*hertz.k))**3*1/(hertz.Ecomb*(hertz.A+hertz.B))**2;
+    hertz.Fn = (hertz.Ca^2 * Po * 2 * pi/(3*hertz.k))^3*1/(hertz.Ecomb*(hertz.A+hertz.B))^2;
     Fn=hertz.Fn;
   else
     hertz.Fn=Fn;
@@ -63,4 +63,4 @@ function hertz=hertz_theory_elliptical(v1, E1, v2, E2, Rx1, Rx2, Ry1, Ry2, Fn, P
   hertz.delta_tau0=hertz.Ctau0*hertz.b*(hertz.A+hertz.B)*hertz.Ecomb;
   hertz.tau0=hertz.delta_tau0/2;
   hertz.Z0=hertz.CZ0*hertz.b;
-  endfunction
+  end

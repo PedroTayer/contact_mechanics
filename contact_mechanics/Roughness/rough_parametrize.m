@@ -29,4 +29,4 @@ function [sup, sq, sa, Tz, texto] = rough_parametrize(body, Rx, sq_inputed, amp,
   sa=sq*sqrt(2);
   texto=sprintf('Calculated with %s',method_input);  
   sup=z+roughness;
-endfunction
+end

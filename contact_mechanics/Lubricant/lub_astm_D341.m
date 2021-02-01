@@ -13,4 +13,4 @@ function lub=lub_astm_D341(a, eta0, eta1, T1, T0, Tf)
   
   % beta
   lub.beta = lub.m/Tf*(lub.visc_cin+a)/lub.visc_cin*log(lub.visc_cin+a); % Apostila 2 pg 37
-endfunction
+end

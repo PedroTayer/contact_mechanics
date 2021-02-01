@@ -40,7 +40,7 @@ function [k, Ca, Cdelta, Csigma, Ctau, CZs, Ctau0, CZ0, elips ]=hertz_elliptical
     % Interpolations
     y_ctau=interp1(AaboutB_dado, ctau, xabs, "pchip", 'EXTRAP');
     y_czs=interp1(AaboutB_dado, czs, xabs, "pchip", 'EXTRAP');
-  endif
+  end
   
   % Same for e
   es=[0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4];
@@ -137,6 +137,6 @@ function [k, Ca, Cdelta, Csigma, Ctau, CZs, Ctau0, CZ0, elips ]=hertz_elliptical
     semilogx(xplot,Cdeltaplot,'og','DisplayName','Cdelta','LineWidth',2)
     semilogx(xplot,Csigmaplot,'or','DisplayName','Csigma','LineWidth',2)
     legend()
-  endif
+  end
   
-endfunction
+end

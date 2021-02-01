@@ -8,6 +8,6 @@ function altered_struct=substitute_values_on_structure(string_value, value, stru
       cell_struct(name,1)=value;
       altered_struct=cell2struct(cell_struct, names);
       break
-    endif
-  endfor
-endfunction
+    end
+  end
+end

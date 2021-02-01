@@ -9,7 +9,7 @@ function value=extract_values_from_structure(string_value, struct_of_structs)
       if strcmpi(string_value,names(name))
         value=celula_from_unique(name,1);
         return
-      endif
-    endfor
-  endfor
-endfunction
+      end
+    end
+  end
+end
