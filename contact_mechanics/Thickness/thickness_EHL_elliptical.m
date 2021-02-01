@@ -14,7 +14,7 @@ function thickness =thickness_EHL_elliptical(Fn, Rx, Ry, Ecomb, eta, alfa, somaU
   # Parameter Co
   thickness.Co=1-0.61*exp(-0.752*(value)^0.64);
   # h0
-  thickness.h0_without_correctionh0_without_correction = 1.345*Rx *thickness.Co* thickness.Uadm**0.67 * thickness.Gadm**0.53 * thickness.Wadm**-0.067;  % Apostila 3 pg 51
+  thickness.h0_without_correction = 1.345*Rx *thickness.Co* thickness.Uadm**0.67 * thickness.Gadm**0.53 * thickness.Wadm**-0.067;  % Apostila 3 pg 51
     # Parameter Cm
   thickness.Cm=1-exp(-0.7*(value)^0.64);
   # hm

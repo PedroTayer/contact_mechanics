@@ -8,12 +8,12 @@ function hertz=hertz_theory_elliptical(v1, E1, v2, E2, Rx1, Rx2, Ry1, Ry2, Fn, P
   hertz.B=1/hertz.Ry;  % Apostila 3 pg 61
   
   if hertz.Rx<=hertz.Ry
-    fprintf('Vx ESTÁ NA DIREÇÃO DE A (A=1/RX)\n')
+    fprintf('Vx IS ON A DIRECTION (A=1/RX)\n')
     hertz.A=1/hertz.Rx;  % Apostila 3 pg 61
     hertz.B=1/hertz.Ry;  % Apostila 3 pg 61
     hertz.inverted = false;
   else
-    fprintf('Vx ESTÁ NA DIREÇÃO DE B (B=1/RX)\n')
+    fprintf('Vx IS ON B DIRECTION (B=1/RX)\n')
     # B está na direção de X
     hertz.inverted = true;
     hertz.A=1/hertz.Ry;  % Apostila 3 pg 61

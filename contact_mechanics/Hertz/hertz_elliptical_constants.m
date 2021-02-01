@@ -51,7 +51,7 @@ function [k, Ca, Cdelta, Csigma, Ctau, CZs, Ctau0, CZ0, elips ]=hertz_elliptical
   y_cz0=interp1(es, cz0, xes, "pchip", 'EXTRAP');
   
   # Find A/B value
-  index=find(100*xabs==100*AsobreB);
+  index=find(100*xabs==100*AaboutB);
   Ctau=y_ctau(index);
   CZs=y_czs(index);
   

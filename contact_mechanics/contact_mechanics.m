@@ -26,8 +26,17 @@ end
 ## CINEMATICS
 cin.W1 = 2*pi*data.n1/60; % Conversion rpm->rad/s
 cin.W2 = 2*pi*data.n2/60; % Conversion rpm->rad/s
+if data.Rx1==inf
+  cin.U1=data.V1;
+  else
 cin.U1 = data.V1 + cin.W1*data.Rx1; % Tangential velocity of contact point = V+W*r
+end
+if data.Rx2==inf
+  cin.U2=data.V2;
+else
 cin.U2 = data.V2 + cin.W2*data.Rx2; % Tangential velocity of contact point = V+W*r
+end
+
 cin.Vrol = cin.U1+cin.U2; % Apostila 3 pg 43
 cin.Vslid = abs(cin.U1-cin.U2); % Apostila 3 pg 43
 cin.Ve = cin.Vslid/cin.Vrol; % Apostila 3 pg 43
@@ -93,10 +102,8 @@ thickness.deltaT=(1-thickness.fi_t^(1/0.727))/lubricant.beta; % Apostila 3 págin
 thickness.Tcenter=data.Tf-273+thickness.deltaT; % Apostila 3 página 51
 
 
-lambda_corr=thickness.lambda_corr;
-
 ## THERMAL PARAMETERS
-thermal=thermal_of_contact(data.C1,data.C2,data.K1,data.K2,data.ro1,data.ro2,friction.coef,cin.Vslid,cin.U1,cin.U2,hertz.Fn,hertz.L,hertz.Ecomb,hertz.Rx,lubricant.alfa,lubricant.eta,thickness.h0_corr,lubricant.k,data.Tf, hertz.pm, lubricant.beta);
+thermal=thermal_of_contact(data.C1,data.C2,data.K1,data.K2,data.ro1,data.ro2,friction.coef,cin.Vslid,cin.U1,cin.U2,hertz.Fn,hertz.L,hertz.Ecomb,hertz.Rx,lubricant.alfa,lubricant.eta,thickness.h0,lubricant.k,data.Tf, hertz.pm, lubricant.beta);
 
 rmpath('./Hertz');
 rmpath('./Thickness');
