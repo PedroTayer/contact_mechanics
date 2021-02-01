@@ -2,7 +2,7 @@ function [data, data_txt,raw]=read_input_excel()
   
   [raw,data_txt]=xlsread('input_data.xlsx');
   
-  # Identify Infs
+  % Identify Infs
   cols_infs=data_txt(:,2);
   for i=1:length(cols_infs);
     if (strcmpi(cols_infs{i,1},'inf'));
@@ -11,7 +11,7 @@ function [data, data_txt,raw]=read_input_excel()
   endfor
   
  
-  # Table of values
+  % Table of values
   data.Rx1 = raw(1,1);
   data.Ry1 = raw(2,1);
   data.Rx2 = raw(3,1);
@@ -62,16 +62,16 @@ function [data, data_txt,raw]=read_input_excel()
   data.wavelength2 = raw(12,9);
   data.sq2 = raw(14,9);
   
-  # If Fn value is valid, disconsider Po, otherwise, disconsider Fn
-  # Script will verify which is disconsidered and calculate from considered
+  % If Fn value is valid, disconsider Po, otherwise, disconsider Fn
+  % Script will verify which is disconsidered and calculate from considered
   if (isnumeric(data.Fn) && ~isnan(data.Fn) && data.Fn>0)
     data.Po=0;
   else
     data.Fn=0;
   end
   
-  # Read the Xs
-  # Position of each X in order (i.e. txtdata1 is on line3 and column10)
+  % Read the Xs
+  % Position of each X in order (i.e. txtdata1 is on line3 and column10)
   linha = [20, 3, 10, 2, 3, 4, 5, 6];
   coluna = [8, 10, 10, 14, 14, 14, 14, 14];
   nvar = length(linha);
@@ -83,13 +83,13 @@ function [data, data_txt,raw]=read_input_excel()
     end
   end
   
-  # Condição múltipla
+  % Condição múltipla
   data.multiple = booleano(1);
   data.varstr = data_txt(21,8);
   data.resstr = data_txt(24,8);
   data.vector = linspace(raw(22,5), raw(22,7), raw(22,9));
   
-  # Outros X
+  % Outros X
   data.txtdata1 = booleano(2);
   data.txtdata2 = booleano(3);
   data.plot_kandconstants = booleano(4);
@@ -97,7 +97,7 @@ function [data, data_txt,raw]=read_input_excel()
   data.plot_surfaces = booleano(6);
   data.plot_stresses = booleano(7);
 
-  # Caso for multiplo, não plotar nada
+  % Caso for multiplo, não plotar nada
   if data.multiple
       data.plot_kandconstants = 0;
       data.plot_txtdata = 0;

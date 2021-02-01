@@ -1,10 +1,10 @@
 function [k, Ca, Cdelta, Csigma, Ctau, CZs, Ctau0, CZ0, elips ]=hertz_elliptical_constants(AaboutB, inverted, toplot)
   
-  # Two decimal in A/B
+  % Two decimal in A/B
   AaboutB=round(100*AaboutB)/100;
   
   
-  # Calculate k
+  % Calculate k
   k = (AaboutB)^(-2/3);
   calc_error=1;
   it=0;
@@ -30,19 +30,19 @@ function [k, Ca, Cdelta, Csigma, Ctau, CZs, Ctau0, CZ0, elips ]=hertz_elliptical
     y_czs=ones(xabs,1)*0.7861;
   else
     
-    # Create interpolations
-    # Base for Ctau and CZs
+    % Create interpolations
+    % Base for Ctau and CZs
     AaboutB_dado=[1, 1.5, 2, 2.5, 3, 3.5, 4, 6, 8, 10, 20];
     xabs=[1:0.01:20];
-    # Table values
+    % Table values
     ctau=[21, 24, 26, 27, 28, 28.5, 29, 30, 30, 30, 30]./100;
     czs=[47, 54, 60, 63.5, 65.5, 68, 69, 73, 75, 76, 78.61]./100;
-    # Interpolations
+    % Interpolations
     y_ctau=interp1(AaboutB_dado, ctau, xabs, "pchip", 'EXTRAP');
     y_czs=interp1(AaboutB_dado, czs, xabs, "pchip", 'EXTRAP');
   endif
   
-  # Same for e
+  % Same for e
   es=[0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4];
   xes=[0:0.001:4];
   ctau0=[0.5, 0.4, 0.22, 0.18, 0.14, 0.11, 0.085, 0.07, 0.06];
@@ -50,13 +50,13 @@ function [k, Ca, Cdelta, Csigma, Ctau, CZs, Ctau0, CZ0, elips ]=hertz_elliptical
   y_ctau0=interp1(es, ctau0, xes, "pchip", 'EXTRAP');
   y_cz0=interp1(es, cz0, xes, "pchip", 'EXTRAP');
   
-  # Find A/B value
+  % Find A/B value
   index=find(100*xabs==100*AaboutB);
   Ctau=y_ctau(index);
   CZs=y_czs(index);
   
   
-  # Find e value
+  % Find e value
   if inverted
     elips=1/k;
   else
@@ -100,7 +100,7 @@ function [k, Ca, Cdelta, Csigma, Ctau, CZs, Ctau0, CZ0, elips ]=hertz_elliptical
     ylabel('Cz0', 'Fontsize',16)
     set(gca, "linewidth", 4, "fontsize", 16)
     
-    # Calculate k, Csigma, Ca, e Cdelta for many values
+    % Calculate k, Csigma, Ca, e Cdelta for many values
     AaboutBsplot = [1:1:100];
     xplot = AaboutBsplot;
     
