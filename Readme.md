@@ -44,7 +44,7 @@ contact_mechanics
 ## Workflow
 
 ### main.m
-![](/diagrama_main.png))
+![](/diagrama_main.png)
 
 ### contact_mechanics.m
 ![](/diagrama_contact_mechanics.png)
